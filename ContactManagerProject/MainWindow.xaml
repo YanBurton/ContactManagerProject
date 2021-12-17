@@ -12,10 +12,9 @@
             <ColumnDefinition Width="171*"/>
         </Grid.ColumnDefinitions>
         <Label Content="All Contacts" Grid.Column="0" HorizontalAlignment="Center" Margin="0,10" FontSize="30"/>
-        <!--<Label Name="lbl1" Margin="0,0,8.4,0"></Label>-->
 
         <DockPanel Grid.Column="0" Margin="25,60,0,25">
-            <ListBox x:Name="selectList" HorizontalContentAlignment="Stretch" SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox x:Name="selectList" HorizontalContentAlignment="Stretch" SelectionMode="Extended">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>

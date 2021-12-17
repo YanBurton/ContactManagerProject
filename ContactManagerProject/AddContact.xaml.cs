@@ -19,6 +19,7 @@ namespace ContactManagerProject
     /// </summary>
     public partial class AddContact : Window
     {
+        DB db = DB.getInstance();
         public AddContact()
         {
             InitializeComponent();
@@ -26,7 +27,26 @@ namespace ContactManagerProject
 
         private void AddContactButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (fName.Text == "")
+            {
+                requiredF.Visibility = Visibility.Visible;
+            }
+            else if (lName.Text == "")
+            {
+                requiredL.Visibility = Visibility.Visible;
+            } 
+            else if (phone.Text == "")
+            {
+                requiredP.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                requiredF.Visibility = Visibility.Hidden;
+                requiredL.Visibility = Visibility.Hidden;
+                requiredP.Visibility = Visibility.Hidden;
+                Contact newContact = new Contact(fName.Text, lName.Text, phone.Text, address.Text, state.Text, zip.Text);
+                db.AddContact(newContact);
+            }          
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ContactManagerProject
 {
@@ -34,8 +35,7 @@ namespace ContactManagerProject
                 {
                     if (!sdr.HasRows)
                     {
-                        //to be changed for messagebox
-                        Console.WriteLine("No records found.");
+                        MessageBox.Show("No records found.");
                     }
                     else
                     {
@@ -67,8 +67,7 @@ namespace ContactManagerProject
                 {
                     if (!sdr.HasRows)
                     {
-                        //to be changed again
-                        Console.WriteLine("No records found.");
+                        MessageBox.Show("No records found.");
                     }
                     else
                     {
@@ -100,13 +99,11 @@ namespace ContactManagerProject
                 {
                     con.Open();
                     var rowsAffected = cmd.ExecuteNonQuery();
-                    //to be changed
-                    Console.WriteLine("Record Inserted Successfully");
+                    MessageBox.Show("Record Inserted Successfully");
                 }
                 catch (SqlException e)
                 {
-                    //to be changed
-                    Console.WriteLine("Error: " + e.ToString());
+                    MessageBox.Show("Error: " + e.ToString());
                 }
             }
         }
@@ -132,13 +129,11 @@ namespace ContactManagerProject
                 {
                     con.Open();
                     var rowsAffected = cmd.ExecuteNonQuery();
-                    //to be changed
-                    Console.WriteLine("Record Updated Successfully");
+                    MessageBox.Show("Record Updated Successfully");
                 }
                 catch (SqlException e)
                 {
-                    //to be changed
-                    Console.WriteLine("Error: " + e.ToString());
+                    MessageBox.Show("Error: " + e.ToString());
                 }
             }
         }
@@ -158,13 +153,11 @@ namespace ContactManagerProject
                 {
                     con.Open();
                     var rowsAffected = cmd.ExecuteNonQuery();
-                    //to be changed
-                    Console.WriteLine("Record Deleted Successfully");
+                    MessageBox.Show("Record Deleted Successfully");
                 }
                 catch (SqlException e)
                 {
-                    //to be changed
-                    Console.WriteLine("Error: " + e.ToString());
+                    MessageBox.Show("Error: " + e.ToString());
                 }
             }
         }

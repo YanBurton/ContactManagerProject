@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ContactManagerProject"
         mc:Ignorable="d"
         Title="Updating Contact" Height="368.377" Width="497.707" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Background="White">
-    <Grid>
+    <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="163*"/>
             <ColumnDefinition Width="286*"/>
@@ -20,25 +20,28 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Foreground="Black"  Content="First Name:" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Width="99" FontSize="18" Grid.Row="0"/>
+        <Label Foreground="Black"  Content="First Name:" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" Width="99" FontSize="18" Grid.Row="0"/>
         <TextBox Foreground="Black" x:Name="fName" HorizontalAlignment="Center" Height="28" TextWrapping="WrapWithOverflow" VerticalAlignment="Center" Width="200" Grid.Column="1" FontSize="12" Background="LightBlue" Margin="43.8,9.4,41.8,9"/>
+        <Label Name="requiredF" Visibility="Hidden" Foreground="Red" Content="*" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" FontSize="30" VerticalAlignment="Center"/>
 
-        <Label Foreground="Black" Content="Last Name:" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0"  Width="98" FontSize="18" Grid.Row="1"/>
+        <Label Foreground="Black" Content="Last Name:" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0"  Width="98" FontSize="18" Grid.Row="1"/>
         <TextBox Foreground="Black" x:Name="lName" HorizontalAlignment="Center" Height="28" TextWrapping="WrapWithOverflow" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="1" FontSize="12" Background="LightBlue" Margin="43.8,9.4,41.8,9"/>
+        <Label Name="requiredL" Visibility="Hidden" Foreground="Red" Content="*" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" FontSize="30" VerticalAlignment="Center"/>
 
-        <Label Foreground="Black" Content="Phone Number:" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Width="135" FontSize="18" Grid.Row="2"/>
+        <Label Foreground="Black" Content="Phone Number:" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" Width="135" FontSize="18" Grid.Row="2"/>
         <TextBox Foreground="Black" x:Name="phone" HorizontalAlignment="Center" Height="28" TextWrapping="WrapWithOverflow" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="2" FontSize="12" Background="LightBlue" Margin="43.8,9.4,41.8,9"/>
+        <Label Name="requiredP" Visibility="Hidden" Foreground="Red" Content="*" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" FontSize="30" VerticalAlignment="Center"/>
 
-        <Label Foreground="Black" Content="Address:" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Width="79" FontSize="18" Grid.Row="3"/>
+        <Label Foreground="Black" Content="Address:" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" Width="79" FontSize="18" Grid.Row="3"/>
         <TextBox Foreground="Black" x:Name="address" HorizontalAlignment="Center" Height="28" TextWrapping="WrapWithOverflow" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="3" FontSize="12" Background="LightBlue" Margin="43.8,9.4,41.8,9"/>
 
-        <Label Foreground="Black" Content="State:" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Width="55" FontSize="18" Grid.Row="4"/>
+        <Label Foreground="Black" Content="State:" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" Width="55" FontSize="18" Grid.Row="4"/>
         <TextBox Foreground="Black" x:Name="state" HorizontalAlignment="Center" Height="28" TextWrapping="WrapWithOverflow" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="4" FontSize="12" Background="LightBlue" Margin="43.8,9.4,41.8,9"/>
 
-        <Label Foreground="Black" Content="Postal Code:" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Width="107" FontSize="18" Grid.Row="5"/>
+        <Label Foreground="Black" Content="Postal Code:" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" Width="107" FontSize="18" Grid.Row="5"/>
         <TextBox Foreground="Black" x:Name="zip" HorizontalAlignment="Center" Height="28" TextWrapping="WrapWithOverflow" VerticalAlignment="Center" Width="200" Grid.Column="1" Grid.Row="5" FontSize="12" Background="LightBlue" Margin="43.8,9.4,41.8,9"/>
 
-        <Button Grid.Column="1" Grid.Row="6" Margin="57.6,9.6,55.2,10.4" Content="Update Contact" Click="UpdateButton_Click"/>
+        <Button Grid.Column="1" Grid.Row="6" Content="Update Contact" Click="UpdateButton_Click" Width="200" Height="28"/>
 
     </Grid>
 </Window>
