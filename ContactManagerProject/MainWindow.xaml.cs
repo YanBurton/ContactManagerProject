@@ -25,13 +25,11 @@ namespace ContactManagerProject
         {
             InitializeComponent();
 
-            //Test for show contacts (works)
-            List<Contact> myList = db.GetAllContacts();
-
-            foreach (Contact c in myList)
-            {
-                lbl1.Content += c.id + " " + c.f_name + " " + c.l_name + " " + c.phone + " " + c.address + " " + c.state + " " + c.zip + "\n";
-            }
+            //Initialize list
+            List<Contact> contactList = db.GetAllContacts();
+            selectList.ItemsSource = contactList;
+            selectList.SelectedItem = 0;
+            selectList.Focus();
 
             //test for add contact (works)
             /*
@@ -51,6 +49,35 @@ namespace ContactManagerProject
 
             //test for delete contact (works)
             //db.DeleteContact(3);
+
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddContact addContact = new AddContact();
+            addContact.ShowDialog();
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Update update = new Update();
+            update.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnView_Click(object sender, RoutedEventArgs e)
+        {
+            Contact i = (Contact)selectList.SelectedItem;
+            View view = new View(i);
+            view.ShowDialog();
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
     }
