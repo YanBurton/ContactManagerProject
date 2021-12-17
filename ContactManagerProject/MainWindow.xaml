@@ -38,9 +38,11 @@
         <DockPanel Grid.Column="1">
             <StackPanel DockPanel.Dock="Right" Margin="15,75">
                 <Button Name="btnAdd" DockPanel.Dock="Top" Content="Add Contact" Click="btnAdd_Click" Width="120" Height="30" Margin="0,5"/>
+                <Button Name="btnAddCsv" DockPanel.Dock="Top" Content="Add From CSV" Click="btnAddCsv_Click" Width="120" Height="30" Margin="0,5"/>
                 <Button Name="btnUpdate" DockPanel.Dock="Top" Content="Update Contact" Click="btnUpdate_Click" Width="120" Height="30" Margin="0,5"/>
                 <Button Name="btnDelete" DockPanel.Dock="Top" Content="Delete Contact" Click="btnDelete_Click" Width="120" Height="30" Margin="0,5"/>
                 <Button Name="btnView" DockPanel.Dock="Top" Content="View Contact" Click="btnView_Click" Width="120" Height="30" Margin="0,5"/>
+                <Button Name="btnExportCsv" DockPanel.Dock="Top" Content="Export to CSV" Click="btnExportCsv_Click" Width="120" Height="30" Margin="0,5"/>
             </StackPanel>
         </DockPanel>
     </Grid>

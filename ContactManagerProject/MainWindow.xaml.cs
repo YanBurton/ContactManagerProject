@@ -80,5 +80,17 @@ namespace ContactManagerProject
         {
 
         }
+
+        //For thomas
+        private void btnAddCsv_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //For thomas 2
+        private void btnExportCsv_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
