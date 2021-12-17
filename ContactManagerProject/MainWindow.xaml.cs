@@ -33,11 +33,6 @@ namespace ContactManagerProject
             selectList.SelectedItem = 0;
             selectList.Focus();
 
-            //test for add contact (works)
-            /*
-            Contact myContact = new Contact("Thomas", "Pepin", "4502163542", "8975 Exciting Place avenue", "QC", "h7u1a2");
-            db.AddContact(myContact);*/
-
             //test for delete contact (works)
             //db.DeleteContact(3);
 
@@ -60,7 +55,9 @@ namespace ContactManagerProject
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            Contact i = (Contact)selectList.SelectedItem;         
+            db.DeleteContact(i.id);
+            Refresh();
         }
 
         private void btnView_Click(object sender, RoutedEventArgs e)
