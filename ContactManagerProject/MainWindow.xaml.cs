@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.FileIO;
 
 namespace ContactManagerProject
 {
@@ -77,17 +79,60 @@ namespace ContactManagerProject
 
             if (openFileDialog.ShowDialog() == true) {
 
+                string path = openFileDialog.FileName;
+                using (TextFieldParser csvParser = new TextFieldParser(path))
+                {
+                    csvParser.CommentTokens = new string[] { "#" };
+                    csvParser.SetDelimiters(new string[] { "," });
+                    csvParser.HasFieldsEnclosedInQuotes = true;
+
+                    // Skip the row with the column names
+                    csvParser.ReadLine();
+
+                    while (!csvParser.EndOfData)
+                    {
+                        // Read current line fields, pointer moves to the next line.
+                        string[] fields = csvParser.ReadFields();
+                        string fName = fields[0];
+                        string lName = fields[1];
+                        string phone = fields[2];
+                        string address = fields[3];
+                        string state = fields[4];
+                        string zip = fields[5];
+                        Contact newContact = new Contact(fName, lName, phone, address, state, zip);
+                        db.AddContact(newContact);
+
+                    }
+                }
             }
 
-            
+            Refresh();
         }
 
         //For Thomas 2
         private void btnExportCsv_Click(object sender, RoutedEventArgs e)
         {
+            //Change for your own path 
+            string filePath = @"C:\Users\thoma\source\repos\ContactManagerProject\ContactManagerProject\Contact.csv";
+            
+            var csv = new StringBuilder();
+            List<Contact> contacts = db.GetAllContacts();
+            foreach (Contact contact in contacts)
+            {
+                string fName = contact.f_name;
+                string lName = contact.l_name;
+                string phone = contact.phone;
+                string address = contact.address;
+                string states = contact.state;
+                string zip = contact.zip;
 
+
+                var newLine = string.Format("{0},{1},{2},{3},{4},{5}", fName, lName, phone, address, states, zip );
+                csv.AppendLine( newLine );
+            }
+        File.WriteAllText( filePath, csv.ToString() );
         }
-
+        
         private void Refresh()
         {
             List<Contact> contactList = db.GetAllContacts();
