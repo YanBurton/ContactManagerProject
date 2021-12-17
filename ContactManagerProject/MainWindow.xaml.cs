@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Microsoft.Win32;
+using System.IO;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -69,13 +71,21 @@ namespace ContactManagerProject
             Refresh();
         }
 
-        //For thomas
+        //For Thomas
         private void btnAddCsv_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "c:\\";
+            openFileDialog.Filter = "Office files |*.csv";
 
+            if (openFileDialog.ShowDialog() == true) {
+
+            }
+
+            
         }
 
-        //For thomas 2
+        //For Thomas 2
         private void btnExportCsv_Click(object sender, RoutedEventArgs e)
         {
 
